@@ -3,7 +3,7 @@
         <h1 class="logo-wrapper">
             <a class="brand-logo darken-1" href="/">
                 <span class="logo-text hide-on-med-and-down">
-                    Antriap APPS
+                    SIM BANDUNG
                 </span>
             </a>
             <a class="navbar-toggler" href="javascript:void(0)"><i class="material-icons">radio_button_checked</i></a>
@@ -13,9 +13,8 @@
         data-menu="menu-navigation" data-collapsible="menu-accordion">
         <li class="bold ">
             <a class="collapsible-header waves-effect waves-cyan " href="javascript:void(0) ">
-                <i class="material-icons">dashboard</i>
-                <span class="menu-title" data-i18n="Dashboard">Instrumententafel</span>
-                <span class="badge pill orange float-right mr-10">3</span>
+                <i class="material-icons">markunread</i>
+                <span class="menu-title" data-i18n="Dashboard">Persuratan</span>
             </a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
@@ -23,34 +22,61 @@
                     <li class="">
                         <a href="/kategori" data-turbolinks-eval="false">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Kategori</span>
+                            <span data-i18n="Modern">Surat Masuk</span>
                         </a>
                     </li>
   
                     <li class="">
                         <a href="ecommerce.html" class=" ">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">eCommerce</span>
+                            <span data-i18n="eCommerce">Surat Keluar</span>
                         </a>
                     </li>
   
                     <li class="">
                         <a href="analytics.html" class=" ">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Analytics">Analytics</span>
+                            <span data-i18n="Analytics">Surket Aktif</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="analytics.html" class=" ">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Analytics">Surket Alumni</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </li>
+
         <li class="bold ">
             <a class="collapsible-header waves-effect waves-cyan " href="javascript:void(0) ">
-                <i class="material-icons">cast</i>
-                <span class="menu-title" data-i18n="Cards">Pemanggilan</span>
+                <i class="material-icons">settings_input_antenna</i>
+                <span class="menu-title" data-i18n="Cards">Data Lembur</span>
             </a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-  
+                    
+                    <li class="">
+                        <a href="analytics.html" class=" ">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Analytics">Buat Laporan</span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="analytics.html" class=" ">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Analytics">Laporan Tervalidasi</span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="analytics.html" class=" ">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Analytics">Laporan Lembur All</span>
+                        </a>
+                    </li>
                     <li class="">
                         <a href="javascript:void(0) " class="collapsible-header waves-effect waves-cyan ">
                             <i class="material-icons">radio_button_unchecked</i>
@@ -110,6 +136,37 @@
                                 </li>
                             </ul>
                         </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="bold ">
+            <a class="collapsible-header waves-effect waves-cyan " href="javascript:void(0) ">
+                <i class="material-icons">perm_data_setting</i>
+                <span class="menu-title" data-i18n="Dashboard">Master Data</span>
+            </a>
+            <div class="collapsible-body">
+                <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+  
+                    <li class="">
+                        <a href="{{ route('pejabat') }}" data-turbolinks-eval="false">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Modern">Data Pejabat</span>
+                        </a>
+                    </li>
+  
+                    <li class="">
+                        <a href="ecommerce.html" class=" ">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="eCommerce">Data User</span>
+                        </a>
+                    </li>
+  
+                    <li class="">
+                        <a href="analytics.html" class=" ">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Analytics">Data M Sertifikat</span>
+                        </a>
                     </li>
                 </ul>
             </div>

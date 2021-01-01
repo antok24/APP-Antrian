@@ -5,10 +5,10 @@
           <ul class="left">
             <li>
               <h1 class="logo-wrapper">
-                <a class="brand-logo darken-1" href="/home">
+                <a class="brand-logo darken-1" href="{{ route('home') }}">
                   <img src="images/logo/materialize-logo.png" alt="materialize logo">
                   <span class="logo-text hide-on-med-and-down">
-                    Antrian Apps
+                    SIM BANDUNG
                   </span>
                 </a>
               </h1>
@@ -60,7 +60,7 @@
             <li>
               <a class="grey-text text-darken-1" href="user-profile-page.html">
                 <i class="material-icons">person_outline</i>
-                Profile
+                {{ Auth::user()->name }}
               </a>
             </li>
             <li>
@@ -112,69 +112,119 @@
       <nav class="white hide-on-med-and-down" id="horizontal-nav">
         <div class="nav-wrapper">
           <ul class="left hide-on-med-and-down" id="ul-horizontal-nav" data-menu="menu-navigation">
+            {{-- Menu Persuratan --}}
             <li>
               <a class="dropdown-menu" href="javascript:void(0)" data-target="DashboardDropdown">
-                <i class="material-icons">dashboard</i>
+                <i class="material-icons">markunread</i>
                 <span>
-                  <span class="dropdown-title" data-i18n="DaftarAntrian">Daftar Antrian</span>
+                  <span class="dropdown-title" data-i18n="Persuratan">Persuratan</span>
                   <i class="material-icons right">keyboard_arrow_down</i>
                 </span>
               </a>
               <ul class="dropdown-content dropdown-horizontal-list" id="DashboardDropdown">
                 <li class="" data-menu="">
-                  <a href="/kategori" data-turbolinks-eval="true" class="" data-target=""><span data-i18n="Modern">Kategori</span>
+                  <a href="{{ url('/kategori') }}" data-turbolinks-eval="true" class="" data-target=""><span data-i18n="Modern">Surat Masuk</span>
                   </a>
                 </li>
                 <li class="" data-menu="">
-                  <a href="/home" data-turbolinks-eval="true" class="" data-target="">
-                    <span data-i18n="eCommerce">Home</span>
+                  <a href="{{ url('/') }}" data-turbolinks-eval="true" class="" data-target="">
+                    <span data-i18n="eCommerce">Surat Keluar</span>
                   </a>
                 </li>
                 <li class="" data-menu="">
-                  <a href="analytics.html" class="" data-target="">
-                    <span data-i18n="Analytics">Analytics</span>
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="Analytics">Surket Aktif</span>
                   </a>
+                </li>
+                <li class="" data-menu="">
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="Analytics">Surket Alumni</span>
+                  </a>
+                </li>
+                <li class="dropdown-submenu " data-menu="dropdown-submenu" tabindex="0">
+                  <a href="javascript:void(0)" class="dropdownSub-menu" data-target="userDropdown">
+                    <span data-i18n="User">Kategori Lain</span>
+                          <i class="material-icons right">chevron_right</i>
+                        </a>
+                  <ul class="dropdown-content dropdown-horizontal-list" id="userDropdown" tabindex="0" style="">
+                    <li class="" data-menu="" tabindex="0">
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="List">Liste</span>
+                        </a>
+                    </li>
+                    <li class="" data-menu="" tabindex="0">
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="View">Aussicht</span>
+                        </a>
+                    </li>
+                    <li class="" data-menu="" tabindex="0">
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="Edit">Bearbeiten</span>
+                        </a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
+            {{-- Menu Lembur --}}
             <li>
               <a class="dropdown-menu" href="javascript:void(0)" data-target="TemplatesDropdown">
-                <i class="material-icons">cast</i>
+                <i class="material-icons">settings_input_antenna</i>
                 <span>
-                  <span class="dropdown-title" data-i18n="Templates">Pemanggilan</span>
+                  <span class="dropdown-title" data-i18n="DataLembur">Data Lembur</span>
                   <i class="material-icons right">keyboard_arrow_down</i>
                 </span>
               </a>
               <ul class="dropdown-content dropdown-horizontal-list" id="TemplatesDropdown">
                 <li class="" data-menu="">
-                  <a href="https://www.pixinvent.com/materialize-material-design-admin-template/laravel/demo-1/" class=""
+                  <a href="{{ url('/') }}" class=""
                   data-target="">
-                    <span data-i18n="Modern Menu">Modernes Menü</span>
+                    <span data-i18n="Modern Menu">Buat Laporan</span>
                   </a>
                 </li>
                 <li class="" data-menu="">
-                  <a href="https://www.pixinvent.com/materialize-material-design-admin-template/laravel/demo-2/" class=""
+                  <a href="{{ url('/') }}" class=""
                   data-target="">
-                    <span data-i18n="Navbar Dark">Navbar Dark</span>
+                    <span data-i18n="Navbar Dark">Laporan Tervalidasi</span>
                   </a>
                 </li>
                 <li class="" data-menu="">
-                  <a href="https://www.pixinvent.com/materialize-material-design-admin-template/laravel/demo-3/" class="" data-target="">
-                    <span data-i18n="Gradient Menu">Verlaufsmenü</span>
-                  </a>
-                </li>
-                <li class="" data-menu="">
-                  <a href="https://www.pixinvent.com/materialize-material-design-admin-template/laravel/demo-4/" class="" data-target="">
-                    <span data-i18n="Dark Menu">Dunkles Menü</span>
-                  </a>
-                </li>
-                <li class="" data-menu="">
-                  <a href="index.html" class="" data-target="">
-                    <span data-i18n="Horizontal Menu">Horizontales Menü</span>
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="Gradient Menu">Laporan Lembur All</span>
                   </a>
                 </li>
               </ul>
-            </ul>
+            </li>
+            {{-- Master Data --}}
+            <li>
+              <a class="dropdown-menu" href="javascript:void(0)" data-target="AppsDropdown">
+                <i class="material-icons">settings</i>
+                <span>
+                  <span class="dropdown-title" data-i18n="MasterData">Master Data</span>
+                  <i class="material-icons right">keyboard_arrow_down</i>
+                </span>
+              </a>
+              <ul class="dropdown-content dropdown-horizontal-list" id="AppsDropdown">
+                <li class="" data-menu="">
+                  <a href="{{ route('pejabat') }}" class=""
+                  data-target="">
+                    <span data-i18n="Modern Menu">Data Pejabat</span>
+                  </a>
+                </li>
+                <li class="" data-menu="">
+                  <a href="{{ url('/') }}" class=""
+                  data-target="">
+                    <span data-i18n="Navbar Dark">Data Pegawai</span>
+                  </a>
+                </li>
+                <li class="" data-menu="">
+                  <a href="{{ url('/') }}" class="" data-target="">
+                    <span data-i18n="Gradient Menu">Master Sertifikat</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </nav>
       <!-- END: Horizontal nav start-->

@@ -27,6 +27,7 @@
 <body
   class="horizontal-layout page-header-light horizontal-menu 2-columns "
   data-open="click" data-menu="horizontal-menu" data-col="2-columns">
+  
 
   <!-- BEGIN: Header-->
   @include('layouts.header')
@@ -41,6 +42,7 @@
       <div class="pt-1 pb-0" id="breadcrumbs-wrapper">
       <!-- Search for small screen-->
       {{ $slot }}
+      {{-- @yield('content') --}}
       </div>
       <div class="content-overlay"></div>
     </div>
@@ -53,7 +55,7 @@
   class="page-footer footer gradient-shadow  footer-static   footer-dark gradient-45deg-indigo-light-blue">
   <div class="footer-copyright">
     <div class="container">
-      <span>&copy; 2019 <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
+      <span>&copy; 2021 <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
           target="_blank">www.tanpaspasi.com</a> All rights reserved.
       </span>
       <span class="right hide-on-small-only">
@@ -67,6 +69,7 @@
 <script src="{{ asset('assets/js/search.js') }}"></script>
 <script src="{{ asset('assets/js/custom/custom-script.js') }}"></script>
 <script src="{{ asset('assets/js/scripts/customizer.js') }}"></script>
+<script src="{{ asset('assets/js/scripts/ui-alerts.js') }}"></script>
 @livewireScripts
 <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
 </body>

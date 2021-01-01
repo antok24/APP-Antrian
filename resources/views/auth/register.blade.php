@@ -1,77 +1,103 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html class="loading"
+  lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+  data-textdirection="ltr">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+  <title>User Login | APPS Antrian</title>
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon-152x152.png">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="{{ url('images/favicon/apple-touch-icon-152x152.png') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ asset('vendors/vendors.min.css') }}">
+<link rel="stylesheet" type="text/css"
+  href="{{ asset('assets/css/themes/materialize.css') }}">
+<link rel="stylesheet" type="text/css"
+  href="{{ asset('assets/css/themes/style.css') }}">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/layouts/style-horizontal.css') }}">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/pages/login.css') }}">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/laravel-custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom/custom.css') }}">
+@livewireStyles
+</head>
+<!-- END: Head-->
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<body
+  class="horizontal-layout page-header-light horizontal-menu 2-columns  login-bg "
+  data-open="click" data-menu="vertical-modern-menu" data-col="1-column">
+  <div class="row">
+    <div class="col s12">
+      <div class="container">
+        <!--  main content -->
+        <div id="login-page" class="row">
+  <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+      <div class="row">
+        <div class="input-field col s12">
+          <h5 class="ml-4">Sign Up</h5>
         </div>
-    </div>
+      </div>
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="material-icons prefix pt-2">person_outline</i>
+          <input id="username" name="name" type="text">
+          <label for="username" class="center-align">Username</label>
+        </div>
+      </div>
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="material-icons prefix pt-2">mail_outline</i>
+          <input id="email" name="email" type="email">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="material-icons prefix pt-2">lock_outline</i>
+          <input id="password" name="password" type="password">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="material-icons prefix pt-2">lock_outline</i>
+          <input id="password-again" name="password_confirmation" type="password">
+          <label for="password-again">Password again</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="submit"
+            class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Register</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <p class="margin medium-small"><a href={{ url('/login') }}>Already have an account? Login</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-@endsection
+      </div>
+      
+      <div class="content-overlay"></div>
+    </div>
+  </div>
+  <script src="{{ asset('assets/js/vendors.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins.js') }}"></script>
+  <script src="{{ asset('assets/js/search.js') }}"></script>
+  <script src="{{ asset('assets/js/custom/custom-script.js') }}"></script>
+  @livewireScripts
+</body>
+</html>

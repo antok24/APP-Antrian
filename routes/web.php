@@ -1,28 +1,23 @@
 <?php
 
-use App\Http\Livewire\Kategori\Index;
+use App\Http\Livewire\Kategori;
+use App\Http\Livewire\Pejabat;
 use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-/* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
-Route::get('/home', Dashboard::class);
+Route::middleware('auth')->group(function(){
 
-Route::get('/kategori', Index::class);
+    Route::get('/omah', Dashboard::class)->name('home');
+
+    Route::get('/kategori', Kategori\Index::class);
+
+    Route::get('/pejabat', Pejabat\Index::class)->name('pejabat');
+
+});
 

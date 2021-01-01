@@ -239,8 +239,8 @@
                     </div>
                     <!-- Blog Style Two -->
                 </div>
+            </div>
         </div>
-    
         <div class="content-overlay"></div>
     </div>
 </div>
